@@ -3,10 +3,10 @@
  * words that can be contained within it.
  * Example:	rootWord is "baseball"
  * 			sub words are "base" + "ball"
- * TODO: Override this @author statement
- * @author ???
- * TODO: Override this @version statement
- * @version 01/12/2015
+
+ * @author marinkitagawa.x86
+
+ * @version 02-009-2023
  */
 
 import java.util.*;
@@ -14,7 +14,7 @@ public class SubWord implements Comparable<SubWord> {
     private String rootWord;
     private String sub1, sub2;
 
-    private String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //private String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     /**
      * Constructor for a SubWord object.  Start by supplying the
@@ -44,7 +44,6 @@ public class SubWord implements Comparable<SubWord> {
      * are equal, +int if this.rootWord is greater than other.rootWord
      */
     public int compareTo(SubWord other)	{
-        //TODO: override this invalid return statement
         return rootWord.compareTo(other.rootWord);
         /*int a = 0;
         int b = 0;
@@ -61,7 +60,7 @@ public class SubWord implements Comparable<SubWord> {
      * @return This SubWord in root = sub1 + sub2 format
      */
     public String toString()	{
-        //TODO: define this method to return "rootWord = subWord1 + subWord2"
         return rootWord + " = " + getSubWords();
+
     }
 }
