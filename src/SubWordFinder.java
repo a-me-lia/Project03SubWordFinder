@@ -1,7 +1,11 @@
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Subword finder
@@ -14,6 +18,7 @@ public class SubWordFinder implements WordFinder{
 
     /**
      * constructor method for dictionary
+     * creates all our ole buckets
      */
     public SubWordFinder(){
         dictionary = new ArrayList<>();
@@ -45,11 +50,12 @@ public class SubWordFinder implements WordFinder{
     }
     @Override
     /**
-     * Method to populate the database from the text file, and sort each of the buckets lexographically
+     * Method to populate the database from the text file, and sort each of the buckets lexicographically
      */
     public void  populateDictionary() {
         try{
             Scanner in = new Scanner(new File("new_scrabble.txt"));
+            //Scanner in = new Scanner(new File("words_all_os.txt"));
             String word;
             while(in.hasNext()){
                 word = in.nextLine();
@@ -94,8 +100,7 @@ public class SubWordFinder implements WordFinder{
                 }
             }
         }
-        // for each bucket in dictionary
-            // for each word in bucket
+
 
 
         //System.out.println("DEBUG line 95: " + subwords.size());
@@ -120,17 +125,86 @@ public class SubWordFinder implements WordFinder{
     /**
      * Prints out all the stuff
      * @param args
+     * has this stupid copy-paste code for extra credit
      */
     public static void main(String[] args) {
         SubWordFinder app = new SubWordFinder();
         ArrayList<SubWord> words = app.getSubWords();
+        ArrayList<String> prefixes = new ArrayList<>();
+        ArrayList<String> suffixes = new ArrayList<>();
+
         //System.out.println("DEBUG IN MAIN: " + words.size());
         System.out.println("* List of SubWords in the file *");
-        for(SubWord temp : words)
+        for(SubWord temp : words){
             System.out.println(temp);
-        System.out.println(words.size() + " total SubWords");
-        System.out.println("the most common suffix is ion");
+        }
 
+            for(SubWord object : app.getSubWords()){
+                prefixes.add(object.getSubWords().substring(0,object.getSubWords().indexOf(" ")));
+            }
+            for(SubWord object : app.getSubWords()){
+                suffixes.add(object.getSubWords().substring(object.getSubWords().indexOf(" ")).substring(3));
+            }
+
+        //System.out.println(suffixes);
+        System.out.println("pls be patient the following code takes a while to run");
+        int freq1 = 0;
+
+        // res to store the most occurring string in the array of
+        // strings
+        String res1 = "";
+
+        // running nested for loops to find the most occurring
+        // word in the array of strings
+        for (int i = 0; i < prefixes.size(); i++) {
+            int count = 0;
+            for (int j = i + 1; j < prefixes.size(); j++) {
+                if (prefixes.get(j).equals(prefixes.get(i))) {
+                    count++;
+                }
+            }
+
+            // updating our max freq of occurred string in the
+            // array of strings
+            if (count >= freq1) {
+                res1 = prefixes.get(i);
+                freq1 = count;
+            }
+        }
+        int freq2 = 0;
+
+        // res to store the most occurring string in the array of
+        // strings
+        String res2 = "";
+
+        // running nested for loops to find the most occurring
+        // word in the array of strings
+        for (int i = 0; i < suffixes.size(); i++) {
+            int count = 0;
+            for (int j = i + 1; j < suffixes.size(); j++) {
+                if (suffixes.get(j).equals(suffixes.get(i))) {
+                    count++;
+                }
+            }
+
+            // updating our max freq of occurred string in the
+            // array of strings
+            if (count >= freq2) {
+                res2 = suffixes.get(i);
+                freq2 = count;
+            }
+        }
+        System.out.println(words.size() + " total SubWords");
+
+        System.out.println("The prefix that occurs most is : " + res1);
+        System.out.println("No of times: " + freq1);
+
+        System.out.println("The suffix that occurs most is : " + res2);
+        System.out.println("No of times: " + freq2);
+
+
+        //System.out.println("no one says the prefix and suffix finders have to be efficient go screw yourself");
+        System.out.println("*end of program*");
     }
 
 }

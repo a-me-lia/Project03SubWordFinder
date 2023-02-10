@@ -56,6 +56,8 @@ public class SubWord implements Comparable<SubWord> {
         return a-b;*/
     }
 
+
+
     /**
      * @return This SubWord in root = sub1 + sub2 format
      */
