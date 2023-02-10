@@ -112,7 +112,7 @@ public class SubWordFinder implements WordFinder{
 
         //return binarySearch(dictionary.get(word.indexOf(word.substring(0,1))), 0, dictionary.get(word.indexOf(word.substring(0,1))).size(), word ) >=0;
 
-        ArrayList<String> bucket = dictionary.get(word.indexOf(word.substring(0,1)));
+        ArrayList<String> bucket = dictionary.get(alpha.indexOf(word.substring(0,1)));
         return binarySearch(bucket, 0, bucket.size()-1, word) >= 0;
         //return Collections.binarySearch(bucket, word) >= 0;
     }
