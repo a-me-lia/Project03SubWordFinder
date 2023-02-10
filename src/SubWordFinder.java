@@ -410,11 +410,8 @@ public class SubWordFinder implements WordFinder{
 
         System.out.println("The prefix that occurs most is : " + res1);
         System.out.println("No of times: " + freq1);
-
         System.out.println("The suffix that occurs most is : " + res2);
         System.out.println("No of times: " + freq2);
-
-
         //System.out.println("no one says the prefix and suffix finders have to be efficient go screw yourself");
         System.out.println("*end of program*");
     }
