@@ -360,6 +360,7 @@ public class SubWordFinder implements WordFinder{
                 "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNNNNXXXXNWWWWWMMWWWNNXXNNNWWWWMMMMNOl,..     .......................................................................................................................    .;xNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
                 "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWWNNXXNNNWWWMMMMMWWNNNNNNNWWMMMMWXx;...    .....................................................................................................................    .'cONWMWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\n" +
                 "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWWNNNNNNWWWMMMMMWWWWNXXXNNWMMMMMNk:....   ....................................................................................................................    ..l0WMMWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+        System.out.println("plwease wait uwu");
         int freq1 = 0;
 
         // res to store the most occurring string in the array of
